@@ -1,14 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11205.157 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GranadaShopClase.Aspire", "GranadaShopClase.Aspire\GranadaShopClase.Aspire.csproj", "{43DDFD77-902C-44A4-B86B-9560F96D24C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{52958D56-424E-4EFD-AAD3-EF1CB121D60C}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GranadaShopClase.API.Identity", "GranadaShopClase.API.Identity\GranadaShopClase.API.Identity.csproj", "{9FB8C5DF-F84B-A0F1-E5EA-DEEF03D17656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43DDFD77-902C-44A4-B86B-9560F96D24C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DDFD77-902C-44A4-B86B-9560F96D24C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DDFD77-902C-44A4-B86B-9560F96D24C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DDFD77-902C-44A4-B86B-9560F96D24C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB8C5DF-F84B-A0F1-E5EA-DEEF03D17656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB8C5DF-F84B-A0F1-E5EA-DEEF03D17656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB8C5DF-F84B-A0F1-E5EA-DEEF03D17656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB8C5DF-F84B-A0F1-E5EA-DEEF03D17656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E568C15-B1C9-4D01-B79B-FC255631E0E1}
 	EndGlobalSection
 EndGlobal

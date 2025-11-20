@@ -1,0 +1,6 @@
+@GranadaShopClase.API.Identity_HostAddress = http://localhost:5234
+
+GET {{GranadaShopClase.API.Identity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
