@@ -1,9 +1,12 @@
-
 using Asp.Versioning;
+using GranadaShopClase.API.Identity.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Configuration.AddUserSecrets(typeof(Program).Assembly, true);
 
 // Add services to the container.
 
@@ -27,6 +30,18 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 
+// Program.cs (antes de builder.Build())
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//// Registrar ApplicationDbContext
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+
+// Opcional: registrar Identity si lo utilizas
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,6 +53,16 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/openapi/v1.json", "v1");
     });
 }
+
+// Aplicar migraciones automáticamente
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var db = services.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
+
+
 
 app.UseHttpsRedirection();
 
